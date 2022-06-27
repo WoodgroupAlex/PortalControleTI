@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PortalControleTI.Core;
+using PortalControleTI.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,23 +10,55 @@ namespace PortalControleTI.Portal.Controllers
 {
     public class HomeController : Controller
     {
+        // GET: Cliente
+        [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            var model = ComputadorCore.Get();
+            return View(model);
         }
 
-        public ActionResult About()
+        [HttpGet]
+        public ActionResult Form(string serial)
         {
-            ViewBag.Message = "Your application description page.";
+            Computador model = ComputadorCore.Get(serial);
 
-            return View();
+            if (serial == null)
+            {
+                model = new Computador();
+            }
+
+            if (model == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(model);
         }
 
-        public ActionResult Contact()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Form(Computador computador)
         {
-            ViewBag.Message = "Your contact page.";
+            if (ModelState.IsValid)
+            {
+                Computador serial = ComputadorCore.Get(computador.Serial);
+                
+                if (serial == null)
+                {
+                    ComputadorCore.Add(computador);
+                    TempData["Message"] = string.Format("Você incluiu o cliente {0} com sucesso!", computador.Serial);
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ComputadorCore.Update(computador);
+                    TempData["Message"] = string.Format("Você alterou o cliente {0} com sucesso!", computador.Serial);
+                    return RedirectToAction("Index");
+                }
+            }
 
-            return View();
+            return View(computador);
         }
     }
 }
