@@ -18,13 +18,16 @@ namespace PortalControleTI.Model
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Data { get; set; }
 
+        [Required]
         [MaxLength(255)]
         public string Fabricante { get; set; }
 
+        [Required]
         [MaxLength(100)]
         public string Modelo { get; set; }
 
         [Required]
+        [Key]
         [MaxLength(50)]
         public string Serial { get; set; }
 

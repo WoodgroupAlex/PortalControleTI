@@ -23,7 +23,7 @@ namespace PortalControleTI.Portal.Controllers
         {
             Computador model = ComputadorCore.Get(serial);
 
-            if (serial == null)
+            if (serial == "0")
             {
                 model = new Computador();
             }
@@ -59,6 +59,19 @@ namespace PortalControleTI.Portal.Controllers
             }
 
             return View(computador);
+        }
+
+        [HttpGet]
+        public ActionResult Term(string serial)
+        {
+            Computador model = ComputadorCore.Get(serial);
+
+            if (model == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(model);
         }
     }
 }

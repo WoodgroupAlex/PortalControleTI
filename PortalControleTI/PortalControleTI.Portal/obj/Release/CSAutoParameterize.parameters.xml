@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="PortalControleTIDbContext-Web.config Connection String" description="PortalControleTIDbContext Connection String used in web.config by the application to access the database." defaultValue="Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = PortalControleTI; User Id = rm;Password = rm;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\alex\.machado\\OneDrive\ -\ Wood\ PLC\\Desenvolvimento\\PortalControleTI\\PortalControleTI\.Portal\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PortalControleTIDbContext']/@connectionString" />
+  </parameter>
+</parameters>

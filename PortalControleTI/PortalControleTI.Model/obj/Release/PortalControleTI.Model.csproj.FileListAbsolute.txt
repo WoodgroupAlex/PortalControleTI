@@ -1,0 +1,6 @@
+C:\Users\alex.machado\OneDrive - Wood PLC\Desenvolvimento\PortalControleTI\PortalControleTI.Model\bin\Release\PortalControleTI.Model.dll
+C:\Users\alex.machado\OneDrive - Wood PLC\Desenvolvimento\PortalControleTI\PortalControleTI.Model\bin\Release\PortalControleTI.Model.pdb
+C:\Users\alex.machado\OneDrive - Wood PLC\Desenvolvimento\PortalControleTI\PortalControleTI.Model\obj\Release\PortalControleTI.Model.csproj.AssemblyReference.cache
+C:\Users\alex.machado\OneDrive - Wood PLC\Desenvolvimento\PortalControleTI\PortalControleTI.Model\obj\Release\PortalControleTI.Model.csproj.CoreCompileInputs.cache
+C:\Users\alex.machado\OneDrive - Wood PLC\Desenvolvimento\PortalControleTI\PortalControleTI.Model\obj\Release\PortalControleTI.Model.dll
+C:\Users\alex.machado\OneDrive - Wood PLC\Desenvolvimento\PortalControleTI\PortalControleTI.Model\obj\Release\PortalControleTI.Model.pdb

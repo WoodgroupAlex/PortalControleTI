@@ -50,7 +50,7 @@ namespace PortalControleTI.Data
             StringBuilder SqlInsert = new StringBuilder();
 
             SqlInsert.Append($"Insert Into Computadores " +
-                             $"Values (@CT, @NFe, @Data, @Fabricante, @Modelo, @Serial, @Usuario, @ComputerName, @Status, @Matricula, @Tipo, @DataAtualizacao)");
+                             $"Values (@CT, @NFe, @Data, @Fabricante, @Modelo, @Serial, @Usuario, @ComputerName, @Status, @Matricula, @Tipo, @DataAtualizacao, @Obs, @Local)");
 
             SqlCommand ComandoSQL = new SqlCommand(SqlInsert.ToString(), ConexaoBanco.ConexaoSQL());
             ComandoSQL.Parameters.AddWithValue("@CT", ((object)computador.CT) ?? DBNull.Value);
@@ -80,7 +80,7 @@ namespace PortalControleTI.Data
             SqlUpdate.Append("Update Computadores ");
             SqlUpdate.Append($"Set CT = @CT, NFe = @NFe, Data = @Data" +
                              $", Fabricante = @Fabricante, Modelo = @Modelo, Usuario = @Usuario, ComputerName = @ComputerName, Status = @Status " +
-                             $", Matricula = @Matricula, Tipo = @Tipo, DataAtualizacao = @DataAtualizacao " +
+                             $", Matricula = @Matricula, Tipo = @Tipo, DataAtualizacao = @DataAtualizacao, Obs = @Obs, Local = @Local " +
                              $"Where Serial = @Serial");
 
             SqlCommand ComandoSQL = new SqlCommand(SqlUpdate.ToString(), ConexaoBanco.ConexaoSQL());
@@ -99,18 +99,6 @@ namespace PortalControleTI.Data
             ComandoSQL.Parameters.AddWithValue("@Obs", ((object)computador.Obs) ?? DBNull.Value);
             ComandoSQL.Parameters.AddWithValue("@Local", ((object)computador.Local) ?? DBNull.Value);
 
-            ComandoSQL.ExecuteNonQuery();
-
-            ConexaoBanco.ConexaoSQL().Close();
-        }
-
-        public static void Excluir(Computador computador)
-        {
-            string SqlDelete = $"Delete Computadores " +
-                               $"Where Serial = @Serial";
-
-            SqlCommand ComandoSQL = new SqlCommand(SqlDelete, ConexaoBanco.ConexaoSQL());
-            ComandoSQL.Parameters.AddWithValue("@Serial", computador.Serial);
             ComandoSQL.ExecuteNonQuery();
 
             ConexaoBanco.ConexaoSQL().Close();
