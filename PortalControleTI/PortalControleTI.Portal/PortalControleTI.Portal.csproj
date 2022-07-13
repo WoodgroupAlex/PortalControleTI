@@ -914,6 +914,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\Consultor.png" />
+    <Content Include="Images\LogoWood.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Gentelella\bootstrap\.bower.json" />

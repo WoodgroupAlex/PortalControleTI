@@ -74,10 +74,10 @@
                                                     <td>@item.Status</td>
                                                     <td>@item.DataAtualizacao.ToShortDateString()</td>
                                                     <td class="project-actions text-right">
-                                                        @*<a class="btn btn-primary btn-sm" href="#">
+                                                        <a class="btn btn-primary btn-sm" href="@Url.Action("Term", "Home", new { serial = item.Serial })">
                                                                 <i class="fa fa-folder">
                                                                 </i>
-                                                            </a>*@
+                                                            </a>
                                                         <a class="btn btn-info btn-sm" href="@Url.Action("Form", "Home", new { serial = item.Serial })">
                                                             <i class="fa fa-edit">
                                                             </i>
