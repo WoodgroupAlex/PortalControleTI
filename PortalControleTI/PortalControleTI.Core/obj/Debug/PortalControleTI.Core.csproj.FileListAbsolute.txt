@@ -1,5 +1,3 @@
-C:\Users\alex.machado\OneDrive - Wood PLC\Desenvolvimento\PortalControleTI\PortalControleTI.Core\obj\Debug\PortalControleTI.Core.csproj.AssemblyReference.cache
-C:\Users\alex.machado\OneDrive - Wood PLC\Desenvolvimento\PortalControleTI\PortalControleTI.Core\obj\Debug\PortalControleTI.Core.csproj.CoreCompileInputs.cache
 C:\Users\alex.machado\OneDrive - Wood PLC\Desenvolvimento\PortalControleTI\PortalControleTI.Core\bin\Debug\PortalControleTI.Core.dll.config
 C:\Users\alex.machado\OneDrive - Wood PLC\Desenvolvimento\PortalControleTI\PortalControleTI.Core\bin\Debug\PortalControleTI.Core.dll
 C:\Users\alex.machado\OneDrive - Wood PLC\Desenvolvimento\PortalControleTI\PortalControleTI.Core\bin\Debug\PortalControleTI.Core.pdb
@@ -12,6 +10,8 @@ C:\Users\alex.machado\OneDrive - Wood PLC\Desenvolvimento\PortalControleTI\Porta
 C:\Users\alex.machado\OneDrive - Wood PLC\Desenvolvimento\PortalControleTI\PortalControleTI.Core\bin\Debug\PortalControleTI.Model.pdb
 C:\Users\alex.machado\OneDrive - Wood PLC\Desenvolvimento\PortalControleTI\PortalControleTI.Core\bin\Debug\EntityFramework.xml
 C:\Users\alex.machado\OneDrive - Wood PLC\Desenvolvimento\PortalControleTI\PortalControleTI.Core\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\alex.machado\OneDrive - Wood PLC\Desenvolvimento\PortalControleTI\PortalControleTI.Core\obj\Debug\PortalControleTI.Core.csproj.AssemblyReference.cache
+C:\Users\alex.machado\OneDrive - Wood PLC\Desenvolvimento\PortalControleTI\PortalControleTI.Core\obj\Debug\PortalControleTI.Core.csproj.CoreCompileInputs.cache
 C:\Users\alex.machado\OneDrive - Wood PLC\Desenvolvimento\PortalControleTI\PortalControleTI.Core\obj\Debug\PortalControleTI.Core.csproj.CopyComplete
 C:\Users\alex.machado\OneDrive - Wood PLC\Desenvolvimento\PortalControleTI\PortalControleTI.Core\obj\Debug\PortalControleTI.Core.dll
 C:\Users\alex.machado\OneDrive - Wood PLC\Desenvolvimento\PortalControleTI\PortalControleTI.Core\obj\Debug\PortalControleTI.Core.pdb

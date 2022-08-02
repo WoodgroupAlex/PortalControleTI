@@ -23,9 +23,10 @@ namespace PortalControleTI.Data
             {
                 Computador _Computador = new Computador
                 {
+                    Id = int.Parse(Leitor["Id"].ToString()),
                     CT = Leitor["CT"].ToString(),
                     NFe = Leitor["NFe"].ToString(),
-                    Data = DateTime.Parse(Leitor["Data"].ToString()),
+                    DataNfe = DateTime.Parse(Leitor["DataNfe"].ToString()),
                     Fabricante = Leitor["Fabricante"].ToString(),
                     Modelo = Leitor["Modelo"].ToString(),
                     Serial = Leitor["Serial"].ToString(),
@@ -36,7 +37,10 @@ namespace PortalControleTI.Data
                     Tipo = (Tipo)Enum.Parse(typeof(Tipo), Leitor["Tipo"].ToString()),
                     DataAtualizacao = DateTime.Parse(Leitor["DataAtualizacao"].ToString()),
                     Obs = Leitor["Obs"].ToString(),
-                    Local = Leitor["Local"].ToString()
+                    Local = Leitor["Local"].ToString(),
+                    HD = Leitor["HD"].ToString(),
+                    Memoria = Leitor["Memoria"].ToString(),
+                    Processador = Leitor["Processador"].ToString()
                 };
 
                 Computador.Add(_Computador);
@@ -49,13 +53,13 @@ namespace PortalControleTI.Data
         {
             StringBuilder SqlInsert = new StringBuilder();
 
-            SqlInsert.Append($"Insert Into Computadores " +
-                             $"Values (@CT, @NFe, @Data, @Fabricante, @Modelo, @Serial, @Usuario, @ComputerName, @Status, @Matricula, @Tipo, @DataAtualizacao, @Obs, @Local)");
+            SqlInsert.Append($"Insert Into Computadores (CT, Serial, Fabricante, Modelo, Nfe, DataNfe, Usuario, ComputerName, Status, Matricula, Tipo, DataAtualizacao, Obs, Local, HD, Memoria, Processador) " +
+                             $"Values (@CT, @Serial, @Fabricante, @Modelo, @NFe, @DataNfe, @Usuario, @ComputerName, @Status, @Matricula, @Tipo, @DataAtualizacao, @Obs, @Local, @HD, @Memoria, @Processador)");
 
             SqlCommand ComandoSQL = new SqlCommand(SqlInsert.ToString(), ConexaoBanco.ConexaoSQL());
             ComandoSQL.Parameters.AddWithValue("@CT", ((object)computador.CT) ?? DBNull.Value);
             ComandoSQL.Parameters.AddWithValue("@NFe", ((object)computador.NFe) ?? DBNull.Value);
-            ComandoSQL.Parameters.AddWithValue("@Data", computador.Data);
+            ComandoSQL.Parameters.AddWithValue("@DataNfe", computador.DataNfe);
             ComandoSQL.Parameters.AddWithValue("@Fabricante", ((object)computador.Fabricante) ?? DBNull.Value);
             ComandoSQL.Parameters.AddWithValue("@Modelo", ((object)computador.Modelo) ?? DBNull.Value);
             ComandoSQL.Parameters.AddWithValue("@Serial", computador.Serial);
@@ -67,6 +71,9 @@ namespace PortalControleTI.Data
             ComandoSQL.Parameters.AddWithValue("@DataAtualizacao", DateTime.Now.Date);
             ComandoSQL.Parameters.AddWithValue("@Obs", ((object)computador.Obs) ?? DBNull.Value);
             ComandoSQL.Parameters.AddWithValue("@Local", ((object)computador.Local) ?? DBNull.Value);
+            ComandoSQL.Parameters.AddWithValue("@HD", ((object)computador.HD) ?? DBNull.Value);
+            ComandoSQL.Parameters.AddWithValue("@Memoria", ((object)computador.Memoria) ?? DBNull.Value);
+            ComandoSQL.Parameters.AddWithValue("@Processador", ((object)computador.Processador) ?? DBNull.Value);
 
             ComandoSQL.ExecuteNonQuery();
 
@@ -78,15 +85,16 @@ namespace PortalControleTI.Data
             StringBuilder SqlUpdate = new StringBuilder();
 
             SqlUpdate.Append("Update Computadores ");
-            SqlUpdate.Append($"Set CT = @CT, NFe = @NFe, Data = @Data" +
+            SqlUpdate.Append($"Set CT = @CT, NFe = @NFe, DataNfe = @DataNfe, Serial = @Serial" +
                              $", Fabricante = @Fabricante, Modelo = @Modelo, Usuario = @Usuario, ComputerName = @ComputerName, Status = @Status " +
                              $", Matricula = @Matricula, Tipo = @Tipo, DataAtualizacao = @DataAtualizacao, Obs = @Obs, Local = @Local " +
-                             $"Where Serial = @Serial");
+                             $"Where Id = @Id");
 
             SqlCommand ComandoSQL = new SqlCommand(SqlUpdate.ToString(), ConexaoBanco.ConexaoSQL());
+            ComandoSQL.Parameters.AddWithValue("@Id", ((object)computador.Id) ?? DBNull.Value);
             ComandoSQL.Parameters.AddWithValue("@CT", ((object)computador.CT) ?? DBNull.Value);
             ComandoSQL.Parameters.AddWithValue("@NFe", ((object)computador.NFe) ?? DBNull.Value);
-            ComandoSQL.Parameters.AddWithValue("@Data", computador.Data);
+            ComandoSQL.Parameters.AddWithValue("@DataNfe", computador.DataNfe);
             ComandoSQL.Parameters.AddWithValue("@Fabricante", ((object)computador.Fabricante) ?? DBNull.Value);
             ComandoSQL.Parameters.AddWithValue("@Modelo", ((object)computador.Modelo) ?? DBNull.Value);
             ComandoSQL.Parameters.AddWithValue("@Serial", computador.Serial);

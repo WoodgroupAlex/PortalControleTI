@@ -17,9 +17,9 @@ namespace PortalControleTI.Core
             return ComputadorData.GetComputadores().OrderBy(p => p.DataAtualizacao);
         }
 
-        public static Computador Get(string serial)
+        public static Computador Get(int Id)
         {
-            return ComputadorData.GetComputadores().FirstOrDefault(p => p.Serial == serial);
+            return ComputadorData.GetComputadores().FirstOrDefault(p => p.Id == Id);
         }
 
         public static void Update(Computador computador)

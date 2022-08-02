@@ -19,13 +19,18 @@ namespace PortalControleTI.Portal.Controllers
         }
 
         [HttpGet]
-        public ActionResult Form(string serial)
+        public ActionResult Form(int Id)
         {
-            Computador model = ComputadorCore.Get(serial);
+            Computador model;
 
-            if (serial == "0")
+            if (Id == 0)
             {
                 model = new Computador();
+                model.DataNfe = DateTime.Now;
+            }
+            else
+            {
+                model = ComputadorCore.Get(Id);
             }
 
             if (model == null)
@@ -42,9 +47,7 @@ namespace PortalControleTI.Portal.Controllers
         {
             if (ModelState.IsValid)
             {
-                Computador serial = ComputadorCore.Get(computador.Serial);
-                
-                if (serial == null)
+                if (computador.Id == 0)
                 {
                     ComputadorCore.Add(computador);
                     TempData["Message"] = string.Format("Você incluiu o cliente {0} com sucesso!", computador.Serial);
@@ -62,9 +65,9 @@ namespace PortalControleTI.Portal.Controllers
         }
 
         [HttpGet]
-        public ActionResult Term(string serial)
+        public ActionResult Term(int Id)
         {
-            Computador model = ComputadorCore.Get(serial);
+            Computador model = ComputadorCore.Get(Id);
 
             if (model == null)
             {
